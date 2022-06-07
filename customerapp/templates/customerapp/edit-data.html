@@ -1,0 +1,83 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+{% load static %}
+<html lang="zxx">
+
+<head>
+	<title>Snow Signup form Responsive Widget Template : W3Layouts</title>
+
+	<!-- Meta tags -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Style -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'customerapp/assets2/css/style.css'%}" type="text/css" media="all" />
+</head>
+
+<body>
+	<!-- Signup form -->
+	<section class="w3l-signup">
+		<div class="overlay">
+			<div class="wrapper">
+				<div class="logo">
+					<a class="brand-logo" href="index.html">edit data form</a>
+				</div>
+			<div class="form-section">
+				    {% if key %}
+				    	<div class="alert alert-primary" role="alert">
+ 							 This is a primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+						</div>
+				    {% endif %}
+						<h3>Sign up</h3>
+					<form action="{% url 'edit_data' %}" method="post" class="signin-form">
+						{% csrf_token %}
+                    		<div class="form-input">
+							<input type="text" name="firstname" placeholder="Enter First Name" required="" autofocus>
+						</div>
+						<div class="form-input">
+							<input type="text" name="address" placeholder="address" required="" autofocus>
+						</div>
+						<div class="form-input">
+							<input type="email" name="email" value="{{uid.email}}" disabled  autofocus>
+						</div>
+						<div class="form-input">
+							<input type="password" name="password" placeholder="Password" required="">
+						</div>
+
+                        <div class="form-input">
+							<input type="text" name="city" placeholder="city" required="" autofocus>
+						</div>
+						     <div class="form-input">
+							<input type="file" name="image" placeholder="image" required="" autofocus>
+						</div>
+
+                        <div class="form-input">
+							<input type="text" name="state" placeholder="state" required="" autofocus>
+						</div>
+
+                        <div class="form-input">
+							<input type="text" name="pincode" placeholder="pincode" required="" autofocus>
+						</div>
+
+                         <input type="submit" value="submit" class="btn btn-primary theme-button mt-4">
+
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id='stars'></div>
+		<div id='stars2'></div>
+		<div id='stars3'></div>
+
+
+		<!-- //copyright -->
+	</section>
+
+	<!-- /Signup form -->
+</body>
+
+</html>

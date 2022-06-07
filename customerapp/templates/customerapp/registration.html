@@ -1,0 +1,73 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+{% load static %}
+<html lang="zxx">
+
+<head>
+	<title>Snow Signup form Responsive Widget Template : W3Layouts</title>
+
+	<!-- Meta tags -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Style -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'customerapp/assets2/css/style.css'%}" type="text/css" media="all" />
+</head>
+
+<body>
+	<!-- Signup form -->
+	<section class="w3l-signup">
+		<div class="overlay">
+			<div class="wrapper">
+				<div class="logo">
+					<a class="brand-logo" href="index.html">Snow signup form</a>
+				</div>
+			<div class="form-section">
+				    {% if key %}
+				    	<div class="alert alert-primary" role="alert">
+ 							 This is a primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+						</div>
+				    {% endif %}
+						<h3>Sign up</h3>
+					<form action="{% url 'registration' %}" method="post" class="signin-form">
+						{% csrf_token %}
+                    <div class="form-input">
+						 <select name="role" id="cars" class="form-control">
+                          <option class="input-group-addon" value="select" selected disabled>Select Role</option>
+                          <option class="input-group-addon" value="admin">admin</option>
+                          <option class="input-group-addon" value="customer">customer</option>
+                        </select>
+					</div>
+						<div class="form-input">
+							<input type="text" name="firstname" placeholder="Enter First Name" required="" autofocus>
+						</div>
+						<div class="form-input">
+							<input type="text" name="lastname" placeholder="Enter Last Name" required="" autofocus>
+						</div>
+						<div class="form-input">
+							<input type="email" name="email" placeholder="Email" required="" autofocus>
+						</div>
+						<div class="form-input">
+							<input type="password" name="password" placeholder="Password" required="">
+						</div>
+						<button type="submit" class="btn btn-primary theme-button mt-4">Sign Up</button>
+					</form><p class="signup">Already a customer? <a href="#login.html" class="signuplink">Login now</a></p>
+				</div>
+			</div>
+		</div>
+		<div id='stars'></div>
+		<div id='stars2'></div>
+		<div id='stars3'></div>
+
+
+		<!-- //copyright -->
+	</section>
+
+	<!-- /Signup form -->
+</body>
+
+</html>
